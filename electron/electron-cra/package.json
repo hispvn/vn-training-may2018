@@ -17,6 +17,7 @@
     "build-win": "rimraf build dist && react-scripts build && build -w",
     "build-linux": "rimraf build dist && react-scripts build && build -l",
     "build-all": "rimraf build dist && react-scripts build && build -mwl",
+    "prettier": "prettier --print-width 120 --jsx-bracket-same-line --write src/**/*.js",
     "postinstall": "build install-app-deps",
     "precommit": "pretty-quick staged"
   },
