@@ -11,7 +11,7 @@
     "build-linux": "rimraf dist && build -l",
     "build-all": "rimraf dist && build -mwl",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --no-semi --write src/**/*.js",
+    "prettier": "prettier --print-width 120 --jsx-bracket-same-line --write src/**/*.js",
     "postinstall": "build install-app-deps",
     "precommit": "pretty-quick staged"
   },
