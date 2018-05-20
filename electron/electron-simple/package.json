@@ -2,16 +2,18 @@
   "name": "electron-simple",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "build --dir",
-    "build-mac": "build -m",
-    "build-win": "build -w",
-    "build-linux": "build -l",
-    "build-all": "build -mwl",
+    "build": "rimraf dist && build --dir",
+    "build-mac": "rimraf dist && build -m",
+    "build-win": "rimraf dist && build -w",
+    "build-linux": "rimraf dist && build -l",
+    "build-all": "rimraf dist && build -mwl",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "build install-app-deps"
+    "prettier": "prettier --no-semi --single-quote --trailing-comma es5 --write src/**/*.js",
+    "postinstall": "build install-app-deps",
+    "precommit": "pretty-quick staged"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,10 @@
   "devDependencies": {
     "electron": "^2.0.1",
     "electron-builder": "^20.13.4",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.12.1",
+    "pretty-quick": "^1.5.0",
     "rimraf": "^2.6.2"
   }
 }
