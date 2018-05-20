@@ -1,0 +1,24 @@
+{
+  "name": "electron-simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "build --dir",
+    "build-mac": "build -m",
+    "build-win": "build -w",
+    "build-linux": "build -l",
+    "build-all": "build -mwl",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "build install-app-deps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^2.0.1",
+    "electron-builder": "^20.13.4",
+    "rimraf": "^2.6.2"
+  }
+}
