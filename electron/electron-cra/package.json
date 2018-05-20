@@ -1,0 +1,35 @@
+{
+  "name": "electron-cra",
+  "version": "1.0.0",
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "electron-is-dev": "^0.3.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "concurrently \"BROWSER=none react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "rimraf build dist && react-scripts build && build --dir",
+    "build-mac": "rimraf build dist && react-scripts build && build -m",
+    "build-win": "rimraf build dist && react-scripts build && build -w",
+    "build-linux": "rimraf build dist && react-scripts build && build -l",
+    "build-all": "rimraf build dist && react-scripts build && build -mwl",
+    "postinstall": "build install-app-deps",
+    "precommit": "pretty-quick staged"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "electron": "^2.0.1",
+    "electron-builder": "^20.13.4",
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.12.1",
+    "pretty-quick": "^1.5.0",
+    "rimraf": "^2.6.2",
+    "wait-on": "^2.1.0"
+  }
+}
