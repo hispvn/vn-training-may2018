@@ -1,0 +1,26 @@
+{
+  "name": "sqlite3-simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --print-width 120 --jsx-bracket-same-line --write index.js",
+    "precommit": "pretty-quick staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "knex": "^0.14.6",
+    "sqlite3-bin": "git+https://github.com/hisp-vn/sqlite3-bin.git",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.12.1",
+    "pretty-quick": "^1.5.0"
+  }
+}
