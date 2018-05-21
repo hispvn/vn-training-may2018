@@ -19,19 +19,14 @@ const createKnex = ({ filename } = { filename: ":memory:" }) => {
   const Dialect = require(`knex/lib/dialects/sqlite3/index.js`);
   Dialect.prototype._driver = () => require("sqlite3-bin");
 
-  try {
-    return require("knex")({
-      client: Dialect,
-      useNullAsDefault: true,
-      debug: false,
-      connection: {
-        filename
-      }
-    });
-  } catch (err) {
-    console.error(err);
-    process.exit(-1);
-  }
+  return require("knex")({
+    client: Dialect,
+    useNullAsDefault: true,
+    debug: false,
+    connection: {
+      filename
+    }
+  });
 };
 
 module.exports = {
