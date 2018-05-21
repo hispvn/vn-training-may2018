@@ -1,7 +1,7 @@
 const uuid = require("uuid/v4");
-const categories = ["A", "B", "C"];
 
 const generateData = (limit = 1) => {
+  const categories = ["A", "B", "C"];
   const data = [];
 
   for (let i = 0; i < limit; i++) {
