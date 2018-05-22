@@ -5,7 +5,7 @@ const url = require("url");
 let mainWindow;
 
 const createWindow = () => {
-  let loader = new BrowserWindow({ width: 200, height: 200, show: false, frame: false });
+  let loader = new BrowserWindow({ width: 200, height: 200, show: false, frame: false, resizable: false });
 
   loader.once("show", () => {
     mainWindow = new BrowserWindow({ width: 800, height: 600, show: false });
