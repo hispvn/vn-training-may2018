@@ -30,6 +30,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "electron-is-dev": "^0.3.0"
+    "electron-is-dev": "^0.3.0",
+    "load-json-file": "^5.0.0"
   }
 }

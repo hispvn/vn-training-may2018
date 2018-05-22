@@ -1,20 +1,27 @@
 const { remote, ipcRenderer: ipc } = require("electron");
 const mainProcess = remote.require("./main");
 
-console.log(ipc.sendSync("synchronous-message", "ping"));
-
 ipc.on("asynchronous-reply", (event, arg) => {
   console.log(arg);
 });
 
-ipc.send("asynchronous-message", "ping");
+document.querySelector("#syncMessage").addEventListener("click", () => {
+  console.log(ipc.sendSync("synchronous-message", "ping"));
+});
 
-document.querySelector("#logMessage").addEventListener("click", () => {
-  mainProcess.logMessage("ping pong");
+document.querySelector("#asyncMessage").addEventListener("click", () => {
+  ipc.send("asynchronous-message", "ping");
+});
+
+document.querySelector("#logMessage").addEventListener("click", async () => {
+  const res = await mainProcess.logMessage("ping pong");
+  console.log(res);
 });
 
 document.querySelector("#openFile").addEventListener("click", () => {
-  mainProcess.logMessage("ping pong");
+  mainProcess.openFile().then(content => {
+    console.log(content);
+  });
 });
 
 document.querySelector("#saveFile").addEventListener("click", () => {
