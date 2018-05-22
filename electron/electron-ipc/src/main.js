@@ -1,4 +1,5 @@
 const { app, ipcMain: ipc, BrowserWindow } = require("electron");
+const isDev = require("electron-is-dev");
 const path = require("path");
 const url = require("url");
 
@@ -14,6 +15,11 @@ const createWindow = () => {
       slashes: true
     })
   );
+
+  if (isDev) {
+    mainWindow.webContents.openDevTools();
+    require("devtron").install();
+  }
 
   mainWindow.on("closed", () => {
     mainWindow = null;

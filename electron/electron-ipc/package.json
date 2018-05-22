@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "devtron": "^1.4.0",
     "electron": "^2.0.1",
     "electron-builder": "^20.13.4",
     "eslint": "^4.19.1",
@@ -27,5 +28,8 @@
     "prettier": "^1.12.1",
     "pretty-quick": "^1.5.1",
     "rimraf": "^2.6.2"
+  },
+  "dependencies": {
+    "electron-is-dev": "^0.3.0"
   }
 }
