@@ -1,0 +1,31 @@
+{
+  "name": "electron-ipc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "rimraf dist && build --dir",
+    "build-mac": "rimraf dist && build -m",
+    "build-win": "rimraf dist && build -w",
+    "build-linux": "rimraf dist && build -l",
+    "build-all": "rimraf dist && build -mwl",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --print-width 120 --jsx-bracket-same-line --write src/**/*.js",
+    "postinstall": "build install-app-deps",
+    "precommit": "pretty-quick staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^2.0.1",
+    "electron-builder": "^20.13.4",
+    "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "husky": "^0.14.3",
+    "prettier": "^1.12.1",
+    "pretty-quick": "^1.5.1",
+    "rimraf": "^2.6.2"
+  }
+}
