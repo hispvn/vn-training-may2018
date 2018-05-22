@@ -1,0 +1,14 @@
+html,
+body,
+div#root {
+  font-family: Roboto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+}
+
+body,
+input {
+  font: menu;
+}
