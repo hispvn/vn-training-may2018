@@ -27,7 +27,15 @@ const createWindow = () => {
   });
 };
 
-app.on("ready", createWindow);
+app.on("ready", () => {
+  createWindow();
+
+  mainWindow.webContents.on("dom-ready", () => {
+    setInterval(() => {
+      mainWindow.send("update-counter", Math.round(Math.random() * 1000));
+    }, 1000);
+  });
+});
 
 // IPC
 ipc.on("asynchronous-message", (event, arg) => {

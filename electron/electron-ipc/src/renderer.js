@@ -27,3 +27,7 @@ document.querySelector("#openFile").addEventListener("click", () => {
 document.querySelector("#saveFile").addEventListener("click", () => {
   mainProcess.logMessage("ping pong");
 });
+
+ipc.on("update-counter", (event, args = 0) => {
+  document.querySelector("#counter").innerHTML = args;
+});
